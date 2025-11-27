@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeeSafe Communities | Automated HOA Covenant Compliance</title>
+    <meta name="description" content="Automated covenant compliance for HOA communities. Reduce violation admin time by 80%. Eliminate selective enforcement liability.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: {
+                            900: '#1a1a1a',
+                            800: '#2d2d2d',
+                            700: '#404040',
+                            600: '#525252',
+                        },
+                        honey: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        cream: {
+                            50: '#fefdfb',
+                            100: '#fdf9f3',
+                            200: '#f5f0e6',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Fraunces', 'serif'],
+                        'body': ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-body bg-cream-50 text-charcoal-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-cream-50/95 backdrop-blur-sm z-50 border-b border-charcoal-900/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <img src="/BeeSafeLogo.png" alt="BeeSafe Communities" class="h-10 w-auto">
+            </a>
+            <a href="#contact" class="bg-honey-500 hover:bg-honey-600 text-charcoal-900 font-semibold px-5 py-2.5 rounded-lg transition-colors">
+                Schedule a Demo
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Stop Chasing Violations.<br>
+                <span class="gradient-text">Start Documenting Them.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-charcoal-600 max-w-2xl mx-auto mb-8">
+                Reduce violation admin time by 80%. Eliminate selective enforcement liability.
+                Every property, every patrol, documented automatically.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-honey-500 hover:bg-honey-600 text-charcoal-900 font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-honey-500/25">
+                    Schedule a Demo
+                </a>
+                <a href="#how-it-works" class="border-2 border-charcoal-900/20 hover:border-charcoal-900/40 text-charcoal-900 font-semibold px-8 py-4 rounded-lg text-lg transition-colors">
+                    See How It Works
+                </a>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="mt-16 relative">
+                <div class="bg-charcoal-800 rounded-2xl p-8 shadow-2xl">
+                    <div class="grid grid-cols-4 md:grid-cols-8 gap-3">
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-honey-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-honey-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-honey-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <div class="aspect-square bg-charcoal-700 rounded-lg flex items-center justify-center hidden md:flex">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-sm">
+                        <span class="text-cream-100/70">Weekly Patrol Complete</span>
+                        <span class="text-honey-400 font-semibold">3 items flagged for review</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 px-6 bg-charcoal-900 text-cream-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">
+                Your Current Process is a <span class="text-honey-400">Liability</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Inconsistent Drive-Throughs</h3>
+                        <p class="text-charcoal-400">Manual patrols miss violations randomly. Different days, different weather, different coverage. Inconsistency invites lawsuits.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Documentation Gaps</h3>
+                        <p class="text-charcoal-400">Handwritten notes. Photos without timestamps. No proof you checked every property. Legal exposure waiting to happen.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Manager Turnover</h3>
+                        <p class="text-charcoal-400">When your manager leaves, institutional knowledge walks out the door. New hires start from scratch.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Volunteer Board Burnout</h3>
+                        <p class="text-charcoal-400">Board members have day jobs. They can't spend evenings driving around taking photos. Compliance falls through the cracks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 p-6 bg-charcoal-800 rounded-xl border border-charcoal-700 text-center">
+                <p class="text-charcoal-400 text-sm uppercase tracking-wide mb-2">Industry Reality</p>
+                <p class="text-2xl font-display font-bold text-honey-400">"Selective enforcement is the #1 reason HOAs lose lawsuits"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-4">
+                Consistent. Documented. <span class="gradient-text">Automatic.</span>
+            </h2>
+            <p class="text-center text-charcoal-600 mb-16 max-w-2xl mx-auto">
+                Our autonomous patrol robot documents every property, every week, the same way every time.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-honey-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-honey-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3">Patrol</h3>
+                    <p class="text-charcoal-600">
+                        Autonomous robot patrols your streets weekly. Every property. Same day. Same coverage. Same documentation standard.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-honey-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-honey-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3">Detect</h3>
+                    <p class="text-charcoal-600">
+                        AI identifies common violations: trash cans left out, open garages, parking issues, landscaping anomalies. No judgment calls — just anomalies surfaced for your review.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-honey-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-honey-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3">Review</h3>
+                    <p class="text-charcoal-600">
+                        You review flagged items in a simple dashboard. One click to send notice or dismiss. Human judgment, automated documentation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 p-6 bg-cream-200 rounded-xl text-center">
+                <p class="text-charcoal-700 font-medium">
+                    <span class="text-honey-600">Human in the loop</span> — You make the decisions. We surface the information.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 px-6 bg-charcoal-800">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-cream-50 mb-16">
+                Built for <span class="text-honey-400">HOA Reality</span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-charcoal-700 p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-honey-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-honey-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-cream-50 mb-3">Liability Protection</h3>
+                    <p class="text-cream-100/80">
+                        Consistent enforcement defeats selective enforcement lawsuits. Every property documented every patrol. Your defense is built-in.
+                    </p>
+                </div>
+
+                <div class="bg-charcoal-700 p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-honey-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-honey-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-cream-50 mb-3">Time Savings</h3>
+                    <p class="text-cream-100/80">
+                        Replace hours of windshield time with 15-minute dashboard reviews. Your manager focuses on community relations, not patrol routes.
+                    </p>
+                </div>
+
+                <div class="bg-charcoal-700 p-8 rounded-2xl">
+                    <div class="w-12 h-12 bg-honey-500/20 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-honey-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-cream-50 mb-3">Bulletproof Records</h3>
+                    <p class="text-cream-100/80">
+                        Timestamped, geotagged, AI-classified records for every property, every week. When the lawyer asks, you have the receipts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-16">
+                Is BeeSafe <span class="gradient-text">Right for You?</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-display text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </span>
+                        Built For
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-charcoal-700">Self-managed HOAs tired of volunteer burnout</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-charcoal-700">Property managers juggling too many communities</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-charcoal-700">Boards worried about selective enforcement liability</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-charcoal-700">Communities that want consistent, documented patrols</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-display text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-charcoal-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-charcoal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </span>
+                        Not For
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-charcoal-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span class="text-charcoal-500">Communities looking for security guards</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-charcoal-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span class="text-charcoal-500">Associations that want to spy on residents</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <svg class="w-5 h-5 text-charcoal-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            <span class="text-charcoal-500">Boards looking for "gotcha" enforcement</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 px-6 bg-cream-200">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">
+                Simple, Predictable <span class="gradient-text">Pricing</span>
+            </h2>
+            <p class="text-charcoal-600 mb-8">
+                Custom pricing based on community size. Most communities pay
+                <span class="font-semibold text-charcoal-900">$400–900/month</span> —
+                less than one hour of manager time per week.
+            </p>
+            <a href="#contact" class="inline-block bg-honey-500 hover:bg-honey-600 text-charcoal-900 font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-honey-500/25">
+                Get a Custom Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-16">
+                Frequently Asked <span class="gradient-text">Questions</span>
+            </h2>
+
+            <div class="space-y-6">
+                <div class="border border-charcoal-200 rounded-xl p-6">
+                    <h3 class="font-semibold text-lg mb-3">How does the robot access our gated community?</h3>
+                    <p class="text-charcoal-600">
+                        We coordinate access with your board — same as any vendor. The robot operates on community streets only, following the same routes a resident or delivery driver would take.
+                    </p>
+                </div>
+
+                <div class="border border-charcoal-200 rounded-xl p-6">
+                    <h3 class="font-semibold text-lg mb-3">What about resident privacy?</h3>
+                    <p class="text-charcoal-600">
+                        We photograph property exteriors from the street — the same view any pedestrian has. No backyard access, no windows, no faces. Images are used for compliance documentation only and stored securely.
+                    </p>
+                </div>
+
+                <div class="border border-charcoal-200 rounded-xl p-6">
+                    <h3 class="font-semibold text-lg mb-3">Do we still make enforcement decisions?</h3>
+                    <p class="text-charcoal-600">
+                        Absolutely. BeeSafe surfaces potential violations for your review. You decide what gets a notice and what gets dismissed. Human judgment, automated documentation.
+                    </p>
+                </div>
+
+                <div class="border border-charcoal-200 rounded-xl p-6">
+                    <h3 class="font-semibold text-lg mb-3">What violations can it detect?</h3>
+                    <p class="text-charcoal-600">
+                        Common visible violations: trash cans left out, open garage doors, vehicles on lawns, RVs/boats in driveways, landscaping anomalies, and more. We're not replacing your judgment — we're giving you consistent coverage.
+                    </p>
+                </div>
+
+                <div class="border border-charcoal-200 rounded-xl p-6">
+                    <h3 class="font-semibold text-lg mb-3">What does it cost?</h3>
+                    <p class="text-charcoal-600">
+                        Pricing depends on community size and patrol frequency. Most communities pay $400–900/month. Schedule a demo and we'll provide a custom quote based on your specific needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-6 bg-charcoal-900 text-cream-50">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-8">
+                About <span class="text-honey-400">BeeSafe</span>
+            </h2>
+            <p class="text-lg text-charcoal-300 mb-6">
+                BeeSafe Communities was founded in Bentonville, Arkansas after seeing volunteer HOA boards burn out trying to keep up with compliance documentation.
+            </p>
+            <p class="text-lg text-charcoal-300 mb-8">
+                We believe enforcement should be <span class="text-cream-50 font-medium">consistent, documented, and fair</span> — not dependent on who has time to drive around this week.
+            </p>
+            <div class="inline-flex items-center gap-2 text-honey-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="font-medium">Proudly based in Northwest Arkansas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-4">
+                See BeeSafe in Action
+            </h2>
+            <p class="text-center text-charcoal-600 mb-10">
+                15-minute demo. See how automated compliance works for your community.
+            </p>
+
+            <!-- Form - connects to Formspree -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-charcoal-700 mb-2">Your Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-3 rounded-lg border border-charcoal-200 focus:ring-2 focus:ring-honey-500 focus:border-honey-500 outline-none transition-colors">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-charcoal-700 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-3 rounded-lg border border-charcoal-200 focus:ring-2 focus:ring-honey-500 focus:border-honey-500 outline-none transition-colors">
+                </div>
+                <div>
+                    <label for="community" class="block text-sm font-medium text-charcoal-700 mb-2">Community Name</label>
+                    <input type="text" id="community" name="community" required
+                        class="w-full px-4 py-3 rounded-lg border border-charcoal-200 focus:ring-2 focus:ring-honey-500 focus:border-honey-500 outline-none transition-colors">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-charcoal-700 mb-2">Phone <span class="text-charcoal-400">(optional)</span></label>
+                    <input type="tel" id="phone" name="phone"
+                        class="w-full px-4 py-3 rounded-lg border border-charcoal-200 focus:ring-2 focus:ring-honey-500 focus:border-honey-500 outline-none transition-colors">
+                </div>
+                <button type="submit"
+                    class="w-full bg-honey-500 hover:bg-honey-600 text-charcoal-900 font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg shadow-honey-500/25">
+                    Schedule a Demo
+                </button>
+            </form>
+
+            <div class="mt-8 text-center">
+                <p class="text-charcoal-500">Or reach us directly:</p>
+                <a href="mailto:hello@beesafecommunities.com" class="text-honey-600 hover:text-honey-700 font-medium">
+                    hello@beesafecommunities.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-charcoal-900 text-charcoal-400">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 md:gap-6">
+                <div class="text-center md:text-left">
+                    <p class="font-display font-bold text-cream-50 text-lg mb-1">BeeSafe Communities</p>
+                    <p class="text-sm">Bentonville, Arkansas</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-sm mb-2">
+                        <a href="mailto:hello@beesafecommunities.com" class="hover:text-cream-50 transition-colors">
+                            hello@beesafecommunities.com
+                        </a>
+                    </p>
+                    <p class="text-sm">
+                        <a href="tel:+14795551234" class="hover:text-cream-50 transition-colors">
+                            (479) 555-1234
+                        </a>
+                    </p>
+                </div>
+
+                <div class="text-center md:text-right text-sm">
+                    <p>&copy; 2025 BeeSafe Communities LLC</p>
+                    <div class="flex gap-4 justify-center md:justify-end mt-2">
+                        <a href="#" class="hover:text-cream-50 transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-cream-50 transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
